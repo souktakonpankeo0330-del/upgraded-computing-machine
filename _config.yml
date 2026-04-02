@@ -1,0 +1,381 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: "Web Accessibility Initiative (WAI)"
+author: "W3C Web Accessibility Initiative (WAI)"
+claim: "Strategies, standards, and resources to make<br>the web accessible to people with disabilities."
+warning_icon: false
+warning_message: >
+  This is <strong>beta redesign</strong> of the W3C WAI website. (<a href="https://github.com/w3c/wai-website/wiki/W3C-WAI-Website-Redesign-Information">Beta Info and Comments</a>) The published website is at <a href="https://www.w3.org/WAI/">w3.org/WAI/</a>.
+email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  Accessibility resources free online from the international standards organization: W3C Web Accessibility Initiative (WAI).
+baseurl: "/wai-website" # the subpath of your site, e.g. /blog
+url: "https://w3c.github.io" # the base hostname & protocol for your site
+twitter:
+  username: w3c_wai
+exclude:
+  - "_external"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "README.md"
+  - "w3c.json"
+  - ".build"
+  - "script"
+  - "netlify.toml"
+  - "vendor"
+# Build settings
+markdown: kramdown
+kramwdown:
+  toc_levels: 2..3
+  input: GFM
+  syntax_highlighter: rouge
+highlighter: rouge
+repository: w3c/wai-website
+
+ytkey: AIzaSyCiZ9uToWu9jb7BTx47NtzCvmGGXKXp8nI
+
+# remote_themes are an extension for Jekyll running in GitHub pages and are a GitHub repo 
+remote_theme: w3c/wai-website-theme
+
+paginate: 5
+paginate_path: "/news/:num/"
+
+collections_dir: collections
+collections:
+  perspective-videos:
+    area: "Accessibility Fundamentals"
+    name: "Web Accessibility Perspective Videos"
+    shortname: "Perspective Videos"
+    repository: w3c/wai-perspective-videos
+    output: true
+    acknowledgements: true
+    permalink: /:collection/:path/
+  people-use-web:
+    area: "Accessibility Fundamentals"
+    name: "How People with Disabilities Use the Web"
+    repository: w3c/wai-people-use-web
+    output: true
+    acknowledgements: false
+    permalink: /:collection/:path/
+  planning-and-managing:
+    area: "Plan and Manage"
+    name: "Planning and Managing"
+    repository: w3c/wai-dynamic-planning
+    output: true
+    acknowledgements: false
+    permalink: /:collection/:path/
+  accessibility-training:
+    area: "Teach & Advocate"
+    name: "Accessibility Training"
+    shortname: Trainings
+    repository: w3c/wai-develop-training
+    output: true
+    acknowledgements: false
+    permalink: /teach-advocate/:collection/:path/
+  tips:
+    area: "All Areas"
+    name: "Tips for Getting Started"
+    shortname: Getting Started Tips
+    repository: w3c/wai-quick-start
+    output: true
+    acknowledgements: false
+    permalink: /:collection/:path/
+  policies:
+    area: "Plan & Manage"
+    name: "Web Accessibility Laws & Policies"
+    shortname: "Laws & Policies"
+    parent: "/planning/"
+    repository: w3c/wai-policies-prototype
+    output: true
+    acknowledgements: false
+    permalink: /:collection/:path/
+    footer: |
+      <p><strong>Date:</strong> Updated 21 March 2018.</p>
+      <p><strong>Editors and Developers:</strong> Mary Jo Mueller, Robert Jolly, <a href="https://www.w3.org/People/yatil/">Eric Eggert</a>. Contributors: <a href="https://www.w3.org/People/Shawn/">Shawn Lawton Henry</a> and <a href="https://www.w3.org/WAI/EO/EOWG-members">EOWG Participants</a>. Previous editors: <a href="https://www.w3.org/People/Brewer/">Judy Brewer</a> and <a href="https://www.w3.org/People/Shawn/">Shawn Lawton Henry</a>; previous contributor: Jennifer Sutton.</p>
+      <p>Developed by the Education and Outreach Working Group (<a href="https://www.w3.org/WAI/EO/">EOWG</a>).</p>
+  older-users:
+    area: "Plan & Manage"
+    name: "Older Users"
+    shortname: "Older Users"
+    repository: w3c/wai-older-users
+    output: true
+    acknowledgements: false
+    permalink: /:collection/:path/
+    prevnext: false
+  audiences:
+    # area: "Plan & Manage"
+    name: "Roles"
+    shortname: "Roles"
+    repository: w3c/wai-audiences
+    output: true
+    acknowledgements: false
+    permalink: /roles/:path/
+    prevnext: false
+    parent: "/"
+  about:
+    name: "About"
+    repository: w3c/wai-about-wai
+    output: true
+    acknowledgements: false
+    permalink: /:collection/:path/
+    prevnext: false
+  posts:
+    output: true
+    permalink: /news/:year-:month-:day/:title/
+    parent: "/news/"
+    repository: "w3c/wai-news"
+  patterns:
+    title: Patterns
+    permalink: WCAG2/supplemental/:collection/:name/
+    output: true
+    sort_by: ref
+  objectives:
+    title: Objectives
+    permalink: WCAG2/supplemental/:collection/:name/
+    output: true
+    sort_by: ref
+  wai-wcag-act-rules-patterns:
+    title: Glossary
+    permalink: /:collection/:name/
+    output: true
+  apg-examples:
+    output: true
+    permalink: /ARIA/apg/example-index/:path/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: "_perspective-videos"
+    values:
+      layout: "default"
+  - scope:
+      path: "_people-use-web"
+    values:
+      layout: "default"
+  - scope:
+      path: "_planning-and-managing"
+    values:
+      layout: "default"
+  - scope:
+      path: "_accessibility-training"
+    values:
+      layout: "default"
+  - scope:
+      path: "_tips"
+    values:
+      layout: "default"
+  - scope:
+      path: "_policies"
+    values:
+      layout: "policy"
+  - scope:
+      path: "_older-users"
+    values:
+      layout: "default"
+  - scope:
+      path: "_about"
+    values:
+      layout: "default"
+  - scope:
+      path: "_posts"
+    values:
+      layout: "default"
+  - scope:
+      path: "_audiences"
+    values:
+      layout: "sidenav"
+  -
+    scope: 
+      type: "patterns"
+      path: "_patterns"
+    values:
+      class: tight-page
+      layout: "pattern"
+      type_of_guidance_in_content: true
+      type_of_guidance: Cognitive Accessibility Design Pattern
+      feedbackmail: public-cognitive-a11y-tf@w3.org # delete this line if it’s an EOWG resource (the default is wai-eo-editors@w3.org)
+      standalone_resource_header:
+        title: Supplemental Guidance to WCAG 2
+        subtitle: Additional ways to improve accessibility, not required to meet WCAG)
+        link:
+          ref: /WCAG2/supplemental/about/
+          title: About Supplemental Guidance and WCAG
+      standalone_resource_pager:
+        icon: /content-images/wai-wcag-supplemental/brain.svg
+        name: All Cognitive
+        ref: /WCAG2/supplemental/#cognitiveaccessibilityguidance
+        include: dg-pager.liquid
+      footer:
+        > # Translate words below, including "Date:" and "Editor:" Translate the Working Group name. Leave the Working Group acronym in English. Do *not* change the dates in the footer below.
+        <p><strong>Date:</strong> Content first published 29 April 2021 in <a href="https://www.w3.org/TR/coga-usable/">Making Content 
+        Usable for People with Cognitive and Learning Disabilities</a> ("Content Usable"). This user interface posted in January 2022.</p>
+        <p>This content is from the "Content Usable" Working Group Note by Cognitive and Learning Disabilities Accessibility Task Force 
+        (<a href="https://www.w3.org/groups/tf/cognitive-a11y-tf">Coga TF</a>) <a href="https://www.w3.org/groups/tf/cognitive-a11y-tf/participants">participants</a>.
+        It is published by the Accessibility Guidelines Working Group (<a href="https://www.w3.org/groups/wg/ag">AG WG</a>) and the 
+        Accessible Platform Architectures (<a href="https://www.w3.org/groups/wg/apa">APA</a>) Working Group. This user interface was 
+        designed by the Accessibility Education and Outreach Working Group (<a href="https://www.w3.org/groups/wg/eowg">EOWG</a>) with contributions
+        from Steve Lee, Hidde de Vries, Shadi Abou-Zahra, and Shawn Lawton Henry, as part of the <a href="https://www.w3.org/WAI/about/projects/wai-guide/">
+        WAI-Guide project</a>, co-funded by the European Commission.</p>
+  -
+    scope: 
+      type: "objectives"
+      path: "_objectives"
+    values:
+      class: tight-page
+      layout: "objective"
+      type_of_guidance_in_content: true
+      type_of_guidance: Cognitive Accessibility Objective
+      feedbackmail: public-cognitive-a11y-tf@w3.org # delete this line if it’s an EOWG resource (the default is wai-eo-editors@w3.org)
+      standalone_resource_header:
+        title: Supplemental Guidance to WCAG 2
+        subtitle: Additional ways to improve accessibility, not required to meet WCAG
+        link:
+          ref: /WCAG2/supplemental/about/
+          title: About Supplemental Guidance and WCAG
+      standalone_resource_pager:
+        icon: content-images/wai-wcag-supplemental/brain.svg
+        name: All Cognitive
+        ref: WCAG2/supplemental/#cognitiveaccessibilityguidance
+        include: dg-pager.liquid
+      footer:
+        > # Translate words below, including "Date:" and "Editor:" Translate the Working Group name. Leave the Working Group acronym in English. Do *not* change the dates in the footer below.
+        <p><strong>Date:</strong> Content first published 29 April 2021 in <a href="https://www.w3.org/TR/coga-usable/">Making Content 
+        Usable for People with Cognitive and Learning Disabilities</a> ("Content Usable"). This user interface posted in January 2022.</p>
+        <p>This content is from the "Content Usable" Working Group Note by Cognitive and Learning Disabilities Accessibility Task Force 
+        (<a href="https://www.w3.org/groups/tf/cognitive-a11y-tf">Coga TF</a>) <a href="https://www.w3.org/groups/tf/cognitive-a11y-tf/participants">participants</a>.
+        It is published by the Accessibility Guidelines Working Group (<a href="https://www.w3.org/groups/wg/ag">AG WG</a>) and the 
+        Accessible Platform Architectures (<a href="https://www.w3.org/groups/wg/apa">APA</a>) Working Group. This user interface was 
+        designed by the Accessibility Education and Outreach Working Group (<a href="https://www.w3.org/groups/wg/eowg">EOWG</a>) with contributions
+        from Steve Lee, Hidde de Vries, Shadi Abou-Zahra, and Shawn Lawton Henry, as part of the <a href="https://www.w3.org/WAI/about/projects/wai-guide/">
+        WAI-Guide project</a>, co-funded by the European Commission.</p>
+  -
+    scope: 
+      path: "pages/wai-wcag-supplemental"
+    values:
+      class: tight-page
+      layout: standalone_resource
+      feedbackmail: wai@w3.org
+      standalone_resource_header:
+        title: Supplemental Guidance to WCAG 2
+        subtitle: Additional ways to improve accessibility, not required to meet WCAG
+        link:
+          ref: /WCAG2/supplemental/about/
+          title: About Supplemental Guidance and WCAG
+      standalone_resource_pager:
+        icon: /content-images/wai-wcag-supplemental/brain.svg
+        name: All Cognitive
+        ref: /WCAG2/supplemental/#cognitiveaccessibilityguidance
+        include: dg-pager.liquid
+  - scope:
+      path: "pages/wcag-act-rules"
+    values:
+      class: tight-page
+      layout: act_rule
+      external_css: /content-assets/wcag-act-rules/act-styles.css
+      feedbackmail: wai@w3.org # NEW: delete this line if it’s an EOWG resource (the default is wai-eo-editors@w3.org)
+      footer:
+        > # Translate words below, including "Date:" and "Editor:" Translate the Working Group name. Leave the Working Group acronym in English. Do *not* change the dates in the footer below.
+        <p><strong>Date:</strong> Updated @@ Month 2021. First published Month 20@@.</p>
+        <p><strong>Editors:</strong> @@name, @@name. <strong>Contributors:</strong> @@name, @@name, and <a href="https://www.w3.org/groups/wg/@@wg/participants">participants of the @@WG</a>. ACKNOWLEDGEMENTS lists contributors and credits.</p>
+        <p>Developed by the @@ Working Group (<a href="http://www.w3.org/WAI/@@/">@@WG</a>). Developed as part of the <a href="https://www.w3.org/WAI/@@/">WAI-@@ project</a>, @@co-funded by the European Commission.</p>
+      type_of_guidance: "ACT Rule"
+      rule_meta:
+        rule_type: "Atomic rule"
+      sidebar: true
+      standalone_resource_header:
+        title: ACT Rules
+        title-ref: /standards-guidelines/act/rules/
+        subtitle: Rules for accessibility conformance testing (ACT)
+      standalone_resource_nav_links:
+        - name: All Rules
+          ref: /standards-guidelines/act/rules/
+        - name: About
+          ref: /standards-guidelines/act/rules/about/
+        - name: Implementations
+          ref: /standards-guidelines/act/implementations/
+  - scope:
+      path: "pages/wai-aria-practices"
+    values:
+      layout: "standalone_resource"
+      standalone_resource_header:
+        title: "ARIA Authoring Practices Guide (APG)"
+        title-ref: /ARIA/apg/
+        subtitle: "How to build accessibility semantics into web patterns and widgets"
+      standalone_resource_nav_links:
+        - name: APG Home
+          ref: /ARIA/apg/
+        - name: Patterns
+          ref: /ARIA/apg/patterns/
+        - name: Practices
+          ref: /ARIA/apg/practices/
+        - name: Index
+          ref: /ARIA/apg/example-index/
+        - name: About
+          ref: /ARIA/apg/about/
+  -
+    scope: 
+      type: "apg-examples"
+      path: "_apg-examples"
+    values:
+      layout: "standalone_resource"
+      standalone_resource_header:
+        title: "ARIA Authoring Practices Guide (APG)"
+        title-ref: /ARIA/apg/
+        subtitle: "How to build accessibility semantics into web patterns and widgets"
+      standalone_resource_nav_links:
+        - name: APG Home
+          ref: /ARIA/apg/
+        - name: Patterns
+          ref: /ARIA/apg/patterns/
+        - name: Practices
+          ref: /ARIA/apg/practices/
+        - name: Index
+          ref: /ARIA/apg/example-index/
+        - name: About
+          ref: /ARIA/apg/about/
+  -
+    scope:
+      path: "pages/wai-course-list"
+    values:
+      layout: "default"
+
+# include all collections here so they are searchable
+tipue_search:
+  include:
+    pages: true
+    collections:
+      [
+        "wai-wcag-act-rules-patterns",
+        "perspective-videos",
+        "people-use-web",
+        "planning-and-managing",
+        "accessibility-training",
+        "tips",
+        "policies",
+        "older-users",
+        "audiences",
+        "about",
+        "objectives", 
+        "patterns",
+        "apg-examples"
+      ]
+
+# TODO docs say don't need to declare any used in the Theme
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-include-cache
+  - jekyll-paginate
+  - jekyll-remote-theme
+  - jekyll-feed
+  - wai-website-plugin
