@@ -1,0 +1,239 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: "Web Accessibility Initiative (WAI)"
+author: "W3C Web Accessibility Initiative"
+claim: "Strategies, standards, and resources to make<br>the web accessible to people with disabilities."
+warning_icon: false
+warning_message: >
+  This is <strong>beta redesign</strong> of the W3C WAI website. (<a href="https://github.com/w3c/wai-website/wiki/W3C-WAI-Website-Redesign-Information">Beta Info and Comments</a>) The published website is at <a href="https://www.w3.org/WAI/">w3.org/WAI/</a>.
+email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  The Website of the World Wide Web Consortium’s Web Accessibility Initiative.
+baseurl: "/wai-website" # the subpath of your site, e.g. /blog
+url: "https://w3c.github.io" # the base hostname & protocol for your site
+twitter:
+  username: w3c_wai
+author: w3c_wai
+exclude:
+  - "_external"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "README.md"
+  - "w3c.json"
+  - ".build"
+  - "script"
+  - "netlify.toml"
+  - "vendor"
+# Build settings
+markdown: kramdown
+kramwdown:
+  toc_levels: 2..3
+  input: GFM
+  syntax_highlighter: rouge
+highlighter: rouge
+repository: w3c/wai-website
+
+ytkey: AIzaSyCiZ9uToWu9jb7BTx47NtzCvmGGXKXp8nI
+
+remote_theme: w3c/wai-website-theme
+
+paginate: 5
+paginate_path: "/news/:num/"
+
+collections:
+  perspective-videos:
+    area: "Accessibility Fundamentals"
+    name: "Web Accessibility Perspective Videos"
+    shortname: "Perspective Videos"
+    repository: w3c/wai-perspective-videos
+    output: true
+    acknowledgements: true
+    permalink: /:collection/:path/
+  people-use-web:
+    area: "Accessibility Fundamentals"
+    name: "How People with Disabilities Use the Web"
+    repository: w3c/wai-people-use-web
+    output: true
+    acknowledgements: false
+    permalink: /:collection/:path/
+  planning-and-managing:
+    area: "Plan and Manage"
+    name: "Planning and Managing"
+    repository: w3c/wai-dynamic-planning
+    output: true
+    acknowledgements: false
+    permalink: /:collection/:path/
+  # tutorials:
+  #   area: "Design & Develop"
+  #   name: "Web Accessibility Tutorials"
+  #   shortname: Tutorials
+  #   repository: w3c/wai-tutorials
+  #   output: true
+  #   acknowledgements: false
+  #   permalink: /:collection/:path/
+  #   groups:
+  #     - name: index # Note: index is a magic word, it links to the index of the resource
+  #       title: Overview
+  #     - name: page-structure
+  #       title: Page Structure
+  #     - name: menus
+  #       title: Menus
+  #     - name: images
+  #       title: Images
+  #     - name: tables
+  #       title: Tables
+  #     - name: forms
+  #       title: Forms
+  #     - name: carousels
+  #       title: Carousels
+  accessibility-training:
+    area: "Teach & Advocate"
+    name: "Accessibility Training"
+    shortname: Trainings
+    repository: w3c/wai-develop-training
+    output: true
+    acknowledgements: false
+    permalink: /teach-advocate/:collection/:path/
+  tips:
+    area: "All Areas"
+    name: "Tips for Getting Started"
+    shortname: Getting Started Tips
+    repository: w3c/wai-quick-start
+    output: true
+    acknowledgements: false
+    permalink: /:collection/:path/
+  policies:
+    area: "Plan & Manage"
+    name: "Web Accessibility Laws & Policies"
+    shortname: "Laws & Policies"
+    parent: '/planning/'
+    repository: w3c/wai-policies-prototype
+    output: true
+    acknowledgements: false
+    permalink: /:collection/:path/
+    footer: |
+      <p><strong>Date:</strong> Updated 21 March 2018.</p>
+      <p><strong>Editors and Developers:</strong> Mary Jo Mueller, Robert Jolly, <a href="https://www.w3.org/People/yatil/">Eric Eggert</a>. Contributors: <a href="https://www.w3.org/People/Shawn/">Shawn Lawton Henry</a> and <a href="https://www.w3.org/WAI/EO/EOWG-members">EOWG Participants</a>. Previous editors: <a href="https://www.w3.org/People/Brewer/">Judy Brewer</a> and <a href="https://www.w3.org/People/Shawn/">Shawn Lawton Henry</a>; previous contributor: Jennifer Sutton.</p>
+      <p>Developed by the Education and Outreach Working Group (<a href="https://www.w3.org/WAI/EO/">EOWG</a>).</p>
+  media-intro:
+    area: "Design & Develop"
+    name: "Accessible Audio and Video"
+    shortname: "Audio & Video"
+    repository: w3c/wai-media-intro
+    output: true
+    acknowledgements: false
+    permalink: /:collection/:path/
+  older-users:
+    area: "Plan & Manage"
+    name: "Older Users"
+    shortname: "Older Users"
+    repository: w3c/wai-older-users
+    output: true
+    acknowledgements: false
+    permalink: /:collection/:path/
+    prevnext: false
+  audiences:
+    # area: "Plan & Manage"
+    name: "Roles"
+    shortname: "Roles"
+    repository: w3c/wai-audiences
+    output: true
+    acknowledgements: false
+    permalink: /roles/:path/
+    prevnext: false
+    parent: '/'
+  about:
+    name: "About"
+    repository: w3c/wai-about-wai
+    output: true
+    acknowledgements: false
+    permalink: /:collection/:path/
+    prevnext: false
+  posts:
+    output: true
+    permalink: /news/:year-:month-:day/:title/
+    parent: "/news/"
+    repository: "w3c/wai-news"
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "_perspective-videos"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "_people-use-web"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "_planning-and-managing"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "_tutorials"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "_accessibility-training"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "_tips"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "_policies"
+    values:
+      layout: "policy"
+  -
+    scope:
+      path: "_older-users"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "_about"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "_posts"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "_audiences"
+    values:
+      layout: "sidenav"
+
+tipue_search:
+  include:
+    pages: true
+    collections: ["perspective-videos", "people-use-web", "planning-and-managing", "accessibility-training", "tips", "policies", "older-users", "audiences", "about"]
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-include-cache
+  - jekyll-paginate
+  - jekyll-remote-theme
+  - jekyll-feed
+  - wai-website-plugin
